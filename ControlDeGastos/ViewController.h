@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddNewExpense.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddNewExpenseDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tblPeople;
+
+-(IBAction)addNewRecord:(id)sender;
 
 @end
 

@@ -17,6 +17,7 @@
 		AA0130B01D6288DE00B1CF38 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0130AF1D6288DE00B1CF38 /* libsqlite3.tbd */; };
 		AA0130B41D62899C00B1CF38 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130B31D62899C00B1CF38 /* DBManager.m */; };
 		AA0130B61D62AA6500B1CF38 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA0130B51D62AA6500B1CF38 /* sampledb.sql */; };
+		AA0130B91D62AC8F00B1CF38 /* AddNewExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		AA0130B21D62899C00B1CF38 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		AA0130B31D62899C00B1CF38 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		AA0130B51D62AA6500B1CF38 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = sampledb.sql; path = ControlDeGastos/sampledb.sql; sourceTree = "<group>"; };
+		AA0130B71D62AC8F00B1CF38 /* AddNewExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewExpense.h; sourceTree = "<group>"; };
+		AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewExpense.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				AA0130991D62886500B1CF38 /* ViewController.h */,
 				AA01309A1D62886500B1CF38 /* ViewController.m */,
+				AA0130B71D62AC8F00B1CF38 /* AddNewExpense.h */,
+				AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA01309B1D62886500B1CF38 /* ViewController.m in Sources */,
+				AA0130B91D62AC8F00B1CF38 /* AddNewExpense.m in Sources */,
 				AA0130981D62886500B1CF38 /* AppDelegate.m in Sources */,
 				AA0130951D62886500B1CF38 /* main.m in Sources */,
 				AA0130A11D62886500B1CF38 /* ControlDeGastos.xcdatamodeld in Sources */,
