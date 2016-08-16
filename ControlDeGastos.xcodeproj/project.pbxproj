@@ -16,6 +16,7 @@
 		AA0130A61D62886500B1CF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0130A41D62886500B1CF38 /* LaunchScreen.storyboard */; };
 		AA0130B01D6288DE00B1CF38 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0130AF1D6288DE00B1CF38 /* libsqlite3.tbd */; };
 		AA0130B41D62899C00B1CF38 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130B31D62899C00B1CF38 /* DBManager.m */; };
+		AA0130B61D62AA6500B1CF38 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA0130B51D62AA6500B1CF38 /* sampledb.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AA0130AF1D6288DE00B1CF38 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AA0130B21D62899C00B1CF38 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		AA0130B31D62899C00B1CF38 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		AA0130B51D62AA6500B1CF38 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = sampledb.sql; path = ControlDeGastos/sampledb.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		AA0130871D62886500B1CF38 = {
 			isa = PBXGroup;
 			children = (
+				AA0130B51D62AA6500B1CF38 /* sampledb.sql */,
 				AA0130AF1D6288DE00B1CF38 /* libsqlite3.tbd */,
 				AA0130921D62886500B1CF38 /* ControlDeGastos */,
 				AA0130911D62886500B1CF38 /* Products */,
@@ -174,6 +177,7 @@
 			files = (
 				AA0130A61D62886500B1CF38 /* LaunchScreen.storyboard in Resources */,
 				AA0130A31D62886500B1CF38 /* Assets.xcassets in Resources */,
+				AA0130B61D62AA6500B1CF38 /* sampledb.sql in Resources */,
 				AA01309E1D62886500B1CF38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
