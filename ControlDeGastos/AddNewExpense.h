@@ -14,18 +14,22 @@
 
 @end
 
-@interface AddNewExpense : UIViewController <UITextFieldDelegate>
+@interface AddNewExpense : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstname;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtLastname;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtAge;
+@property (weak, nonatomic) IBOutlet UITextField *txtPayMethod;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtCategory;
 
 @property (nonatomic, strong) id<AddNewExpenseDelegate> delegate;
 
 @property (nonatomic) int recordIDToEdit;
 
 - (IBAction)saveInfo:(id)sender;
+
+
 
 @end

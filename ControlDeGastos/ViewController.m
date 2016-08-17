@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
-@property (nonatomic, strong) NSArray *arrPeopleInfo;
+@property (nonatomic, strong) NSArray *arrExpenseInfo;
 
 @property (nonatomic) int recordIDToEdit;
 
@@ -32,7 +32,7 @@
     self.tblPeople.dataSource = self;
     
     /* Initialize the dbManager property. */
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sampledb.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"expense_db.sql"];
     
     /* Load the data */
     [self loadData];
@@ -52,13 +52,14 @@
 
 -(void)loadData {
     /* Form the query. */
-    NSString *query = @"select * from peopleInfo";
+    NSString *query = @"select * from expense";
     
-    /* Get the results. */
-    if (self.arrPeopleInfo != nil) {
-        self.arrPeopleInfo = nil;
+    /* Initialize the array. */
+    if (self.arrExpenseInfo != nil) {
+        self.arrExpenseInfo = nil;
     }
-    self.arrPeopleInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    /* Get the results. */
+    self.arrExpenseInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     /* Reload the table view. */
     [self.tblPeople reloadData];
@@ -72,7 +73,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.arrPeopleInfo.count;
+    return self.arrExpenseInfo.count;
 }
 
 
@@ -84,14 +85,13 @@
     /* Dequeue the cell. */
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
     
-    NSInteger indexOfFirstname = [self.dbManager.arrColumnNames indexOfObject:@"firstname"];
-    NSInteger indexOfLastname = [self.dbManager.arrColumnNames indexOfObject:@"lastname"];
-    NSInteger indexOfAge = [self.dbManager.arrColumnNames indexOfObject:@"age"];
+    NSInteger indexOfAmount = [self.dbManager.arrColumnNames indexOfObject:@"amount"];
+    NSInteger indexOfDescription = [self.dbManager.arrColumnNames indexOfObject:@"description"];
     
     /* Set the loaded data to the appropriate cell labels. */
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfFirstname], [[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfLastname]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfAmount]];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Age: %@", [[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfAge]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
     
     return cell;
 }
@@ -109,7 +109,7 @@
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     /* Get the record ID of the selected name and set it to the recordIDToEdit property. */
-    self.recordIDToEdit = [[[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    self.recordIDToEdit = [[[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
     
     /* Perform the segue. */
     [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
@@ -120,10 +120,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         /* Delete the selected record. */
         /* Find the record ID. */
-        int recordIDToDelete = [[[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+        int recordIDToDelete = [[[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
         
         /* Prepare the query. */
-        NSString *query = [NSString stringWithFormat:@"delete from peopleInfo where peopleInfoID=%d", recordIDToDelete];
+        NSString *query = [NSString stringWithFormat:@"delete from expenses where id=%d", recordIDToDelete];
         
         /* Execute the query. */
         [self.dbManager executeQuery:query];
