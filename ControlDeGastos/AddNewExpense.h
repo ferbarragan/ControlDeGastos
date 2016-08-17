@@ -16,18 +16,23 @@
 
 @interface AddNewExpense : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *txtFirstname;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtLastname;
-
+#pragma mark - User interface components
+@property (weak, nonatomic) IBOutlet UITextField *txtAmount;
+@property (weak, nonatomic) IBOutlet UITextField *txtDate;
+@property (weak, nonatomic) IBOutlet UITextField *txtDescription;
 @property (weak, nonatomic) IBOutlet UITextField *txtPayMethod;
-
 @property (weak, nonatomic) IBOutlet UITextField *txtCategory;
+
 
 @property (nonatomic, strong) id<AddNewExpenseDelegate> delegate;
 
+
+#pragma mark - Global variables
 @property (nonatomic) int recordIDToEdit;
 
+
+#pragma mark - Action methods
 - (IBAction)saveInfo:(id)sender;
 
 

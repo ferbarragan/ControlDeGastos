@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *arrPickerCategory;
 @property (nonatomic, strong) UIPickerView *pickerPayMethod;
 @property (nonatomic, strong) UIPickerView *pickerCategory;
+@property (nonatomic, strong) UIDatePicker *datePicker;
 
 
 -(void)loadInfoToEdit;
@@ -29,8 +30,8 @@
     [super viewDidLoad];
     
     /* Make self the delegate of the textfields. */
-    self.txtFirstname.delegate = self;
-    self.txtLastname.delegate = self;
+    self.txtAmount.delegate = self;
+    self.txtDescription.delegate = self;
     
     /* Initialize the dbManager object. */
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"expense_db.sql"];
@@ -52,14 +53,60 @@
     self.pickerPayMethod.dataSource = self;
     self.pickerPayMethod.delegate = self;
     [self.pickerPayMethod setShowsSelectionIndicator:YES];
+    [self.pickerPayMethod selectRow:0 inComponent:0 animated:NO];
     [self.txtPayMethod setInputView:self.pickerPayMethod];
+    
+    UIToolbar *pickerPayMethodToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [pickerPayMethodToolBar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem *pickerPayMethodToolBarDoneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Listo" style:UIBarButtonItemStylePlain target:self action:@selector(ClosePickerToolBar)];
+    pickerPayMethodToolBar.items = @[pickerPayMethodToolBarDoneBtn];
+    [self.pickerPayMethod addSubview:pickerPayMethodToolBar];
+    
+    /*
+    UIBarButtonItem *pickerPayMethodToolBarSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [pickerPayMethodToolBar setItems:[NSArray arrayWithObjects:pickerPayMethodToolBarSpace,pickerPayMethodToolBarDoneBtn, nil]];
+    [self.txtPayMethod setInputAccessoryView:pickerPayMethodToolBar];
+    */
     
     self.pickerCategory = [[UIPickerView alloc]init];
     self.pickerCategory.dataSource = self;
     self.pickerCategory.delegate = self;
     [self.pickerCategory setShowsSelectionIndicator:YES];
+    [self.pickerCategory selectRow:0 inComponent:0 animated:NO];
     [self.txtCategory setInputView:self.pickerCategory];
     
+    UIToolbar *pickerCategoryToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [pickerCategoryToolBar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem *pickerCategoryToolBarDoneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Listo" style:UIBarButtonItemStylePlain target:self action:@selector(ClosePickerToolBar)];
+    UIBarButtonItem *pickerCategoryToolBarSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [pickerCategoryToolBar setItems:[NSArray arrayWithObjects:pickerCategoryToolBarSpace,pickerCategoryToolBarDoneBtn, nil]];
+    [self.txtCategory setInputAccessoryView:pickerCategoryToolBar];
+    
+    self.datePicker = [[UIDatePicker alloc] init];
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    [self.txtDate setInputView:self.datePicker];
+    
+    UIToolbar *datePickerToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [datePickerToolBar setTintColor:[UIColor grayColor]];
+    UIBarButtonItem *datePickerToolBarDoneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Listo" style:UIBarButtonItemStylePlain target:self action:@selector(ShowSelectedDate)];
+    UIBarButtonItem *datePickerToolBarSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [datePickerToolBar setItems:[NSArray arrayWithObjects:datePickerToolBarSpace,datePickerToolBarDoneBtn, nil]];
+    [self.txtDate setInputAccessoryView:datePickerToolBar];
+    
+    
+}
+
+-(void)ClosePickerToolBar:(id)sender
+{
+    [self.txtDate resignFirstResponder];
+}
+
+-(void)ShowSelectedDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/mm/yyyy"];
+    self.txtDate.text = [NSString stringWithFormat:@"%@",[formatter stringFromDate:self.datePicker.date]];
+    [self.txtDate resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +119,10 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+#pragma mark - DatePicker Methods.
+
+
 
 #pragma mark - PickerView Methods.
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -132,12 +183,11 @@
     /* Prepare the query string. */
     /* If the recordIDToEdit property has value other than -1, then create an update query, otherwie create an insert query */
     NSString *query ;
-    if (self.recordIDToEdit == -1)
-    {
-        query = [NSString stringWithFormat:@"insert into expense values(null, '%@', '%@', %d, %d)", self.txtFirstname.text, self.txtLastname.text, [self.txtPayMethod.text intValue], [self.txtCategory.text intValue]];
+    if (self.recordIDToEdit == -1){
+        query = [NSString stringWithFormat:@"insert into expense values(null, '%@', '%@', '%@',  %d, %d)", self.txtAmount.text, self.txtDescription.text, self.txtDate.text, [self.txtPayMethod.text intValue], [self.txtCategory.text intValue]];
     }
     else {
-        query = [NSString stringWithFormat:@"update expense set amount='%@', description='%@', payMethod_id=%d, category_id=%d where id=%d", self.txtFirstname.text, self.txtLastname.text, self.txtPayMethod.text.intValue, self.txtCategory.text.intValue, self.recordIDToEdit];
+        query = [NSString stringWithFormat:@"update expense set amount='%@', description='%@', payMethod_id=%d, category_id=%d where id=%d", self.txtAmount.text, self.txtDescription.text, self.txtPayMethod.text.intValue, self.txtCategory.text.intValue, self.recordIDToEdit];
     }
     
     /* Execute the query. */
@@ -166,8 +216,8 @@
     NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     /* Set the loaded data to the textfields */
-    self.txtFirstname.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"firstname"]];
-    self.txtLastname.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"lastname"]];
+    self.txtAmount.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"firstname"]];
+    self.txtDescription.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"lastname"]];
     //self.txtAge.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"age"]];
 }
 

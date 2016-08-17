@@ -74,15 +74,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe la cantidad" textAlignment="natural" minimumFontSize="17" id="eDL-4b-yzj">
-                                <rect key="frame" x="20" y="93" width="280" height="30"/>
+                                <rect key="frame" x="20" y="90" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85882352941176465" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Selecciona la fecha" textAlignment="natural" minimumFontSize="17" id="BKe-ha-MVr">
+                                <rect key="frame" x="20" y="140" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe el concepto" textAlignment="natural" minimumFontSize="17" id="C6C-dR-wtY">
-                                <rect key="frame" x="20" y="139" width="280" height="30"/>
+                                <rect key="frame" x="20" y="190" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85882352941176465" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +98,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Selecciona método de pago..." textAlignment="natural" minimumFontSize="17" id="ENn-Y5-0vg">
-                                <rect key="frame" x="20" y="186" width="280" height="30"/>
+                                <rect key="frame" x="20" y="240" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85882352941176465" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +106,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Selecciona la categoría" textAlignment="natural" minimumFontSize="17" id="jy6-Jb-pZq">
-                                <rect key="frame" x="20" y="233" width="280" height="30"/>
+                                <rect key="frame" x="20" y="290" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -117,9 +125,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="txtAmount" destination="eDL-4b-yzj" id="Bab-es-26O"/>
                         <outlet property="txtCategory" destination="jy6-Jb-pZq" id="h9I-pS-Eyd"/>
-                        <outlet property="txtFirstname" destination="eDL-4b-yzj" id="IZz-zj-lre"/>
-                        <outlet property="txtLastname" destination="C6C-dR-wtY" id="qnf-Ra-F65"/>
+                        <outlet property="txtDate" destination="BKe-ha-MVr" id="i7s-dH-0l7"/>
+                        <outlet property="txtDescription" destination="C6C-dR-wtY" id="jTv-Jo-58h"/>
                         <outlet property="txtPayMethod" destination="ENn-Y5-0vg" id="2hM-eL-yve"/>
                     </connections>
                 </viewController>

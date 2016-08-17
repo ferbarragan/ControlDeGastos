@@ -87,11 +87,12 @@
     
     NSInteger indexOfAmount = [self.dbManager.arrColumnNames indexOfObject:@"amount"];
     NSInteger indexOfDescription = [self.dbManager.arrColumnNames indexOfObject:@"description"];
+    NSInteger indexOfDate = [self.dbManager.arrColumnNames indexOfObject:@"date"];
     
     /* Set the loaded data to the appropriate cell labels. */
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfAmount]];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, Fecha: %@", [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription], [[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDate]];
     
     return cell;
 }
