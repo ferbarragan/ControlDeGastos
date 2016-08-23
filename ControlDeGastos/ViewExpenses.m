@@ -1,15 +1,17 @@
 //
-//  ViewController.m
+//  ViewExpenses.m
 //  ControlDeGastos
 //
-//  Created by Christian Barragan on 15/08/16.
+//  Created by Christian Barragan on 20/08/16.
 //  Copyright © 2016 Christian Barragan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewExpenses.h"
 #import "DBManager.h"
 
-@interface ViewController ()
+
+@interface ViewExpenses ()
+
 
 @property (nonatomic, strong) DBManager *dbManager;
 
@@ -19,17 +21,18 @@
 
 -(void)loadData;
 
+
 @end
 
-@implementation ViewController
+@implementation ViewExpenses
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     /* Do any additional setup after loading the view, typically from a nib. */
     
     /* Make self the delegate and datasource of the table view. */
-    self.tblPeople.delegate = self;
-    self.tblPeople.dataSource = self;
+    self.tblExpenses.delegate = self;
+    self.tblExpenses.dataSource = self;
     
     /* Initialize the dbManager property. */
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"expense_db.sql"];
@@ -40,14 +43,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    /* Dispose of any resources that can be recreated. */
-}
-
-- (IBAction)addNewRecord:(id)sender {
-    /* Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one. */
-    self.recordIDToEdit = -1;
-    /* Perform the segue */
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)loadData {
@@ -62,7 +58,7 @@
     self.arrExpenseInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     /* Reload the table view. */
-    [self.tblPeople reloadData];
+    [self.tblExpenses reloadData];
 }
 
 #pragma - mark Table view methods
@@ -113,7 +109,7 @@
     self.recordIDToEdit = [[[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
     
     /* Perform the segue. */
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+    [self performSegueWithIdentifier:@"editExpenseSegue" sender:self];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -124,7 +120,7 @@
         int recordIDToDelete = [[[self.arrExpenseInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
         
         /* Prepare the query. */
-        NSString *query = [NSString stringWithFormat:@"delete from expenses where id=%d", recordIDToDelete];
+        NSString *query = [NSString stringWithFormat:@"delete from expense where id=%d", recordIDToDelete];
         
         /* Execute the query. */
         [self.dbManager executeQuery:query];

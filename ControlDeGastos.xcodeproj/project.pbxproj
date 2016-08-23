@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8009ED5B55DB1D6C034BB0B /* Pods_ControlDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680993905AC415E077283F74 /* Pods_ControlDeGastos.framework */; };
 		AA0130951D62886500B1CF38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130941D62886500B1CF38 /* main.m */; };
 		AA0130981D62886500B1CF38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130971D62886500B1CF38 /* AppDelegate.m */; };
-		AA01309B1D62886500B1CF38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA01309A1D62886500B1CF38 /* ViewController.m */; };
 		AA01309E1D62886500B1CF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA01309C1D62886500B1CF38 /* Main.storyboard */; };
 		AA0130A11D62886500B1CF38 /* ControlDeGastos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA01309F1D62886500B1CF38 /* ControlDeGastos.xcdatamodeld */; };
 		AA0130A31D62886500B1CF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0130A21D62886500B1CF38 /* Assets.xcassets */; };
@@ -19,15 +19,19 @@
 		AA0130B61D62AA6500B1CF38 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA0130B51D62AA6500B1CF38 /* sampledb.sql */; };
 		AA0130B91D62AC8F00B1CF38 /* AddNewExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */; };
 		AA0130BB1D63E08D00B1CF38 /* expense_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA0130BA1D63E08D00B1CF38 /* expense_db.sql */; };
+		AAFC36171D68C113003AAA5D /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFC36161D68C113003AAA5D /* Start.m */; };
+		AAFC361D1D68C2C4003AAA5D /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFC361C1D68C2C4003AAA5D /* BackgroundLayer.m */; };
+		AAFC361F1D68C785003AAA5D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAFC361E1D68C785003AAA5D /* Podfile */; };
+		AAFC36241D68D794003AAA5D /* ViewExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFC36231D68D794003AAA5D /* ViewExpenses.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22BA8702F59AF4743615EA50 /* Pods-ControlDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControlDeGastos/Pods-ControlDeGastos.release.xcconfig"; sourceTree = "<group>"; };
+		680993905AC415E077283F74 /* Pods_ControlDeGastos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControlDeGastos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0130901D62886500B1CF38 /* ControlDeGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControlDeGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0130941D62886500B1CF38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA0130961D62886500B1CF38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA0130971D62886500B1CF38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AA0130991D62886500B1CF38 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AA01309A1D62886500B1CF38 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AA01309D1D62886500B1CF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA0130A01D62886500B1CF38 /* ControlDeGastos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ControlDeGastos.xcdatamodel; sourceTree = "<group>"; };
 		AA0130A21D62886500B1CF38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +44,15 @@
 		AA0130B71D62AC8F00B1CF38 /* AddNewExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewExpense.h; sourceTree = "<group>"; };
 		AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewExpense.m; sourceTree = "<group>"; };
 		AA0130BA1D63E08D00B1CF38 /* expense_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = expense_db.sql; path = ControlDeGastos/expense_db.sql; sourceTree = "<group>"; };
+		AAFC36151D68C113003AAA5D /* Start.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
+		AAFC36161D68C113003AAA5D /* Start.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
+		AAFC361B1D68C2C4003AAA5D /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		AAFC361C1D68C2C4003AAA5D /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		AAFC361E1D68C785003AAA5D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAFC36201D68CA2E003AAA5D /* Shapes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shapes.framework; path = "Pods/../build/Debug-iphoneos/Shapes/Shapes.framework"; sourceTree = "<group>"; };
+		AAFC36221D68D794003AAA5D /* ViewExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewExpenses.h; sourceTree = "<group>"; };
+		AAFC36231D68D794003AAA5D /* ViewExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewExpenses.m; sourceTree = "<group>"; };
+		E85EC3D4FDD039613F569A53 /* Pods-ControlDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControlDeGastos/Pods-ControlDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,20 +61,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0130B01D6288DE00B1CF38 /* libsqlite3.tbd in Frameworks */,
+				A8009ED5B55DB1D6C034BB0B /* Pods_ControlDeGastos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1394BBA7D66FCD89375A7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E85EC3D4FDD039613F569A53 /* Pods-ControlDeGastos.debug.xcconfig */,
+				22BA8702F59AF4743615EA50 /* Pods-ControlDeGastos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A6E3A3C8E76F575337E6CD54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAFC36201D68CA2E003AAA5D /* Shapes.framework */,
+				680993905AC415E077283F74 /* Pods_ControlDeGastos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA0130871D62886500B1CF38 = {
 			isa = PBXGroup;
 			children = (
+				AAFC361E1D68C785003AAA5D /* Podfile */,
 				AA0130BA1D63E08D00B1CF38 /* expense_db.sql */,
 				AA0130B51D62AA6500B1CF38 /* sampledb.sql */,
 				AA0130AF1D6288DE00B1CF38 /* libsqlite3.tbd */,
 				AA0130921D62886500B1CF38 /* ControlDeGastos */,
 				AA0130911D62886500B1CF38 /* Products */,
+				0D1394BBA7D66FCD89375A7C /* Pods */,
+				A6E3A3C8E76F575337E6CD54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +111,7 @@
 		AA0130921D62886500B1CF38 /* ControlDeGastos */ = {
 			isa = PBXGroup;
 			children = (
+				AAFC36181D68C245003AAA5D /* Utils */,
 				AA0130B11D62890600B1CF38 /* Database */,
 				AA0130AE1D62887800B1CF38 /* Main */,
 				AA0130AD1D62886D00B1CF38 /* Controllers */,
@@ -100,10 +136,12 @@
 		AA0130AD1D62886D00B1CF38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AA0130991D62886500B1CF38 /* ViewController.h */,
-				AA01309A1D62886500B1CF38 /* ViewController.m */,
+				AAFC36151D68C113003AAA5D /* Start.h */,
+				AAFC36161D68C113003AAA5D /* Start.m */,
 				AA0130B71D62AC8F00B1CF38 /* AddNewExpense.h */,
 				AA0130B81D62AC8F00B1CF38 /* AddNewExpense.m */,
+				AAFC36221D68D794003AAA5D /* ViewExpenses.h */,
+				AAFC36231D68D794003AAA5D /* ViewExpenses.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +164,15 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		AAFC36181D68C245003AAA5D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAFC361B1D68C2C4003AAA5D /* BackgroundLayer.h */,
+				AAFC361C1D68C2C4003AAA5D /* BackgroundLayer.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0130AA1D62886500B1CF38 /* Build configuration list for PBXNativeTarget "ControlDeGastos" */;
 			buildPhases = (
+				96CB78475550231F43364BD3 /* [CP] Check Pods Manifest.lock */,
 				AA01308C1D62886500B1CF38 /* Sources */,
 				AA01308D1D62886500B1CF38 /* Frameworks */,
 				AA01308E1D62886500B1CF38 /* Resources */,
+				071BF600BCBF85D48BECF6CE /* [CP] Embed Pods Frameworks */,
+				BEDA19A6879D670DCB284720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFC361F1D68C785003AAA5D /* Podfile in Resources */,
 				AA0130BB1D63E08D00B1CF38 /* expense_db.sql in Resources */,
 				AA0130A61D62886500B1CF38 /* LaunchScreen.storyboard in Resources */,
 				AA0130A31D62886500B1CF38 /* Assets.xcassets in Resources */,
@@ -193,13 +244,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		071BF600BCBF85D48BECF6CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ControlDeGastos/Pods-ControlDeGastos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96CB78475550231F43364BD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BEDA19A6879D670DCB284720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ControlDeGastos/Pods-ControlDeGastos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA01308C1D62886500B1CF38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA01309B1D62886500B1CF38 /* ViewController.m in Sources */,
+				AAFC361D1D68C2C4003AAA5D /* BackgroundLayer.m in Sources */,
+				AAFC36171D68C113003AAA5D /* Start.m in Sources */,
 				AA0130B91D62AC8F00B1CF38 /* AddNewExpense.m in Sources */,
+				AAFC36241D68D794003AAA5D /* ViewExpenses.m in Sources */,
 				AA0130981D62886500B1CF38 /* AppDelegate.m in Sources */,
 				AA0130951D62886500B1CF38 /* main.m in Sources */,
 				AA0130A11D62886500B1CF38 /* ControlDeGastos.xcdatamodeld in Sources */,
@@ -313,8 +414,13 @@
 		};
 		AA0130AB1D62886500B1CF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E85EC3D4FDD039613F569A53 /* Pods-ControlDeGastos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Shapes",
+				);
 				INFOPLIST_FILE = ControlDeGastos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barragan.ControlDeGastos;
@@ -324,8 +430,13 @@
 		};
 		AA0130AC1D62886500B1CF38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22BA8702F59AF4743615EA50 /* Pods-ControlDeGastos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Shapes",
+				);
 				INFOPLIST_FILE = ControlDeGastos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barragan.ControlDeGastos;
@@ -352,6 +463,7 @@
 				AA0130AC1D62886500B1CF38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

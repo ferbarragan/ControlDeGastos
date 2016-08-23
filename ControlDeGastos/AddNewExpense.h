@@ -26,6 +26,7 @@
 
 
 @property (nonatomic, strong) id<AddNewExpenseDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *btnSaveInfo;
 
 
 #pragma mark - Global variables
@@ -34,6 +35,7 @@
 
 #pragma mark - Action methods
 - (IBAction)saveInfo:(id)sender;
+
 
 
 
